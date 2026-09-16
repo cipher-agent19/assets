@@ -1,0 +1,50 @@
+# phone-oem-telemetry-blocklist - AdGuard Home custom filter
+# Scoped, conservative first version (16-Sep-2026).
+# Blocks DNS for OnePlus/ColorOS/OPlus/HeyTap/NearMe/RealMe system telemetry,
+# analytics, and ad networks that the stubborn OEM apps use to phone home.
+# Does NOT block core Google API infra (Play/Gmail/Tasks still work).
+#
+# Add as a private custom-filtering-rule-list subscription in AdGuard Home:
+#   URL:  https://raw.githubusercontent.com/cipher-agent19/assets/main/phone-oem-telemetry-blocklist.txt
+# Refine iteratively using AdGuard's Query Log filtered by device - add domains
+# the OEM apps still hit and push updates to this repo.
+#
+# === OnePlus / ColorOS / OPlus ecosystem (vendor cloud & telemetry) ===
+||oplus.com^
+||oplus.net^
+||openapi.oplus.com^
+||cloud.oplus.com^
+||bksin.oplus.com^
+||dian.oplus.com^
+||ota.oplus.com^
+||push.oplus.com^
+||security.oplus.com^
+||heytap.com^
+||heytapdl.com^
+||heytapmobi.com^
+||openapi.heytap.com^
+||cloud.heytap.com^
+||htms.heytap.com^
+||push.heytap.com^
+||coloros.com^
+||nearme.com^
+||open.nearme.com^
+||quickapp.cn^
+||oppo.com^
+||oppomobile.com^
+||push.oppomobile.com^
+||dl.oppomobile.com^
+||realme.com^
+||nearme.com.cn^
+# === Google ad / analytics / telemetry (safe: does not break Play/Gmail/Tasks) ===
+||analytics.google.com^
+||google-analytics.com^
+||googletagmanager.com^
+||doubleclick.net^
+||googleadservices.com^
+||googlesyndication.com^
+||pagead2.googlesyndication.com^
+||ade.googlesyndication.com^
+||metrics.gstatic.com^
+||firebaseremoteconfig.com^
+||app-measurement.com^
